@@ -1,25 +1,127 @@
-# crisp-dm-process
+# Project : CRISP-DM applied to Seattle AirBNB Data
 
-In working with missing values, categorical variables, and building out your model, it was probably easy to lose sight of the big picture of the process. Let's take a quick second to recap that here, and pull together the results you should have arrived through your analysis.
+### Description
 
-1. Business Understanding
+In this project, I will apply CRISP-DM (Cross Industry Process for Data Mining) to Seattle AirBNB Data.
+CRISP-DM consists of 6 steps that I describe hereby.
 
-How do I break into the field?
-What are the placement and salaries of those who attended a coding bootcamp?
-How well can we predict an individual's salary? What aspects correlate well to salary?
-How well can we predict an individual's job satisfaction? What aspects correlate well to job satisfaction?
-2. Data Understanding
+### Workspace
 
-Here we used the stackoverflow data to attempt to answer our questions of interest. We did 1. and 2. in tandem in this case, using the data to help us arrive at our questions of interest. This is one of two methods that is common in practice. The second method that is common is to have certain questions you are interested in answering, and then having to collect data related to those questions.
+#### Perequisites 
 
-3. Prepare Data
+1° PostgreSQL installed
+2° Database "studentdb" with user "student" and password "student" created
 
-This is commonly denoted as 80% of the process. You saw this especially when attempting to build a model to predict salary, and there was still much more you could have done. From working with missing data to finding a way to work with categorical variables, and we didn't even look for outliers or attempt to find points we were especially poor at predicting. There was ton more we could have done to wrangle the data, but you have to start somewhere, and then you can always iterate.
+All the necessary source code are in Jupyter notebooks. To run this project, you have to run notebooks step-by-step in the following order:
 
-4. Model Data
+1° data-and-business-understanding.ipynb
+2° prepare-date.ipynb
+3° model-data-and-results.ipynb
 
-We were finally able to model the data, but we had some back and forth with step 3. before we were able to build a model that had okay performance. There still may be changes that could be done to improve the model we have in place. From additional feature engineering to choosing a more advanced modeling technique, we did little to test that other approaches were better within this lesson.
+The dataset is under the repository <b>/data</b>
 
-5. Results
+### CRISP-DM
 
-Results are the findings from our wrangling and modeling. Below are some questions to recap the results found so far.
+#### 1. Business Understanding
+
+By looking at the data, here are some questions that come up:
+
+What are the busiest times to visit Seattle?
+What are the favorite neighbourhoods ?
+By how much can prices spike ? 
+
+#### 2. Data Understanding
+
+In this step, I try to figure out what are the important features.
+
+Here are some important variables for each file:
+
+<b>listings.csv : id, neighbourhood, room_type</b>
+<b>calendar.csv : listing_id, date, available and price</b>
+<b>reviews.csv : listing_id, date, comments</b>
+
+Step 1 and 2 are in the notebook : <b>data-and-business-understanding.ipynb</b>
+
+#### 3. Prepare Data
+
+In other to make data quering easy, I transfer my data from csv files to PostgreSQL database. It will then be more eaisier for me to query my data and to answer the three questions.
+
+In this step, I create a database called "studentdb" with 3 tables :
+
+<b>listings (id, neighbourhood, room_type)</b>
+<b>calendar (listing_id, date, available, price)</b>
+<b>reviews (listing_id, date, comments)</b>
+
+During this data preparation, I am going also to remove NAN values from listings['id','neighbourhood'] columns.
+
+Step 3 is in the notebook : <b>prepare-date.ipynb</b>
+
+
+#### 4. Model Data
+
+In this step, we are going to query our database in other to answer our three questions:
+
+What are the busiest times to visit Seattle?
+What are the favorite neighbourhoods ?
+By how much can prices spike ? 
+
+#### 5. Results
+
+##### Question 1: What are the busiest times to visit Seattle ?
+
+| month | count |
+| ------| ------|  
+|  01   | 12073 |
+|  02   |  9656 |
+|  03   |  8957 | 
+|  04   |  9727 | 
+|  05   |  9485 |
+|  06   |  8962 |
+|  07   | 10446 |
+|  08   |  9675 | 
+|  09   |  8400 | 
+|  10   |  8107 |
+|  11   |  7290 | 
+|  12   |  6884 | 
+
+We can see that January and July are the busiest times to visit Seattle.
+
+##### Question 2 : What are the favorite neighbourhoods ?
+
+| neighbourhood | count |
+| --------------| ------|  
+|  Belltown     | 28394 |
+|  Queen Anne   | 23369 |
+|  Minor        | 20597 | 
+|  Wallingford  | 15797 | 
+|  Ballard      | 15447 |
+
+The 5 favorite neighbourhoods are : Belltown, Queen Anne, Minor, Wallingford, Ballard.
+
+##### Question 3 : By how much can prices spike ?  
+
+| month | price  |
+| ------| -------|  
+|  01   | 999.00 |
+|  02   | 999.00 |
+|  03   |  99.00 | 
+|  04   |  99.00 | 
+|  05   |  99.00 |
+|  06   |  99.00 |
+|  07   |  99.00 |
+|  08   |  99.00 | 
+|  09   | 999.00 | 
+|  10   | 999.00 |
+|  11   | 999.00 | 
+|  12   | 999.00 | 
+
+Prices can spike up to $999.00. But the most expensive months do not correspond to the busiest ones.
+
+Step 4 and 5 are in the notebook : <b>model-data-and-results.ipynb</b>
+
+
+
+
+
+
+
