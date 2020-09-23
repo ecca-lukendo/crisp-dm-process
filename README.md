@@ -5,6 +5,15 @@
 In this project, I will apply CRISP-DM (Cross Industry Process for Data Mining) to Seattle AirBNB Data.
 CRISP-DM consists of 6 steps that I describe hereby.
 
+#### Content
+
+1° data : repository with our dataset
+2° data-and-business-understanding.ipynb : notebook used to explore data
+3° prepare-date.ipynb : notebook showing how to import and prepare data for 
+4° model-data-and-results.ipynb: notebook explainig the model we used in this project and the results
+5° LICENSE
+6° README.md
+
 ### Workspace
 
 #### Perequisites 
@@ -12,10 +21,12 @@ CRISP-DM consists of 6 steps that I describe hereby.
 1° PostgreSQL installed
 2° Database "studentdb" with user "student" and password "student" created
 
+#### Running
+
 All the necessary source code are in Jupyter notebooks. To run this project, you have to run notebooks step-by-step in the following order:
 
 1° data-and-business-understanding.ipynb
-2° prepare-date.ipynb
+2° prepare-data.ipynb
 3° model-data-and-results.ipynb
 
 The dataset is under the repository <b>/data</b>
@@ -65,59 +76,8 @@ What are the busiest times to visit Seattle?
 What are the favorite neighbourhoods ?
 By how much can prices spike ? 
 
-#### 5. Results
 
-##### Question 1: What are the busiest times to visit Seattle ?
-
-| month | count |
-| ------| ------|  
-|  01   | 12073 |
-|  02   |  9656 |
-|  03   |  8957 | 
-|  04   |  9727 | 
-|  05   |  9485 |
-|  06   |  8962 |
-|  07   | 10446 |
-|  08   |  9675 | 
-|  09   |  8400 | 
-|  10   |  8107 |
-|  11   |  7290 | 
-|  12   |  6884 | 
-
-We can see that January and July are the busiest times to visit Seattle.
-
-##### Question 2 : What are the favorite neighbourhoods ?
-
-| neighbourhood | count |
-| --------------| ------|  
-|  Belltown     | 28394 |
-|  Queen Anne   | 23369 |
-|  Minor        | 20597 | 
-|  Wallingford  | 15797 | 
-|  Ballard      | 15447 |
-
-The 5 favorite neighbourhoods are : Belltown, Queen Anne, Minor, Wallingford, Ballard.
-
-##### Question 3 : By how much can prices spike ?  
-
-| month | price  |
-| ------| -------|  
-|  01   | 999.00 |
-|  02   | 999.00 |
-|  03   |  99.00 | 
-|  04   |  99.00 | 
-|  05   |  99.00 |
-|  06   |  99.00 |
-|  07   |  99.00 |
-|  08   |  99.00 | 
-|  09   | 999.00 | 
-|  10   | 999.00 |
-|  11   | 999.00 | 
-|  12   | 999.00 | 
-
-Prices can spike up to $999.00. But the most expensive months do not correspond to the busiest ones.
-
-Step 4 and 5 are in the notebook : <b>model-data-and-results.ipynb</b>
+Step 4 and results are in the notebook : <b>model-data-and-results.ipynb</b>
 
 
 
