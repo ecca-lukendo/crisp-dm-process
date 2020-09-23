@@ -18,8 +18,8 @@ CRISP-DM consists of 6 steps that I describe hereby.
 
 #### Perequisites 
 
-1° PostgreSQL installed
-2° Database "studentdb" with user "student" and password "student" created
+1. PostgreSQL installed
+2. Database "studentdb" with user "student" and password "student" created
 
 #### Running
 
@@ -37,9 +37,9 @@ The dataset is under the repository <b>/data</b>
 
 By looking at the data, here are some questions that come up:
 
-What are the busiest times to visit Seattle?
-What are the favorite neighbourhoods ?
-By how much can prices spike ? 
+1. What are the busiest times to visit Seattle?
+2. What are the favorite neighbourhoods ?
+3. By how much can prices spike ? 
 
 #### 2. Data Understanding
 
@@ -47,9 +47,9 @@ In this step, I try to figure out what are the important features.
 
 Here are some important variables for each file:
 
-<b>listings.csv : id, neighbourhood, room_type</b>
-<b>calendar.csv : listing_id, date, available and price</b>
-<b>reviews.csv : listing_id, date, comments</b>
+1. <b>listings.csv : id, neighbourhood, room_type</b>
+2. <b>calendar.csv : listing_id, date, available and price</b>
+3. <b>reviews.csv : listing_id, date, comments</b>
 
 Step 1 and 2 are in the notebook : <b>data-and-business-understanding.ipynb</b>
 
@@ -59,9 +59,9 @@ In other to make data quering easy, I transfer my data from csv files to Postgre
 
 In this step, I create a database called "studentdb" with 3 tables :
 
-<b>listings (id, neighbourhood, room_type)</b>
-<b>calendar (listing_id, date, available, price)</b>
-<b>reviews (listing_id, date, comments)</b>
+1. <b>listings (id, neighbourhood, room_type)</b>
+2. <b>calendar (listing_id, date, available, price)</b>
+3. <b>reviews (listing_id, date, comments)</b>
 
 During this data preparation, I am going also to remove NAN values from listings['id','neighbourhood'] columns.
 
@@ -72,9 +72,9 @@ Step 3 is in the notebook : <b>prepare-date.ipynb</b>
 
 In this step, we are going to query our database in other to answer our three questions:
 
-What are the busiest times to visit Seattle?
-What are the favorite neighbourhoods ?
-By how much can prices spike ? 
+1. What are the busiest times to visit Seattle?
+2. What are the favorite neighbourhoods ?
+3. By how much can prices spike ? 
 
 
 Step 4 and results are in the notebook : <b>model-data-and-results.ipynb</b>
