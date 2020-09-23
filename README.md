@@ -7,12 +7,12 @@ CRISP-DM consists of 6 steps that I describe hereby.
 
 #### Content
 
-1° data : repository with our dataset
-2° data-and-business-understanding.ipynb : notebook used to explore data
-3° prepare-date.ipynb : notebook showing how to import and prepare data for 
-4° model-data-and-results.ipynb: notebook explainig the model we used in this project and the results
-5° LICENSE
-6° README.md
+1° data : repository with our dataset<br/>
+2° data-and-business-understanding.ipynb : notebook used to explore data<br/>
+3° prepare-date.ipynb : notebook showing how to import and prepare data<br/>
+4° model-data-and-results.ipynb: notebook explainig the model we used in this project and the results<br/>
+5° LICENSE<br/>
+6° README.md<br/>
 
 ### Workspace
 
